@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>WalkingDead</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+        <script src="http://static.api.5miao.com/js/api.js"></script>
+		<script type="text/javascript" src="js/modernizr.custom.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+	</head>
+	<body>
+        <div class="background"></div>
+	    <div id="load">
+           <audio src="wav/shoot.wav" preload="auto"></audio>
+           <audio src="wav/prepare.wav" preload="auto"></audio>
+           <audio src="wav/attacked.wav" preload="auto"></audio>
+	    <div class="menu_main">
+	     <div class="spinner">
+	   	      <img src="image/Loadingicon.png" class="Loadingicon">
+	   	      <canvas id="canvas" height="200" width="200"> </canvas>
+	        </div>
+	    	<img class="main_logo" id="main_logo" src="image/main_logo.png"/>
+			<img class="main_start" id="main_start" />
+			<img class="main_help" id="main_help" />
+			<img src="image/containt_back.fw.png" alt="" id="main_text" class="main_text">
+			<div class="main_p">
+			</div>
+			<img class="main_again" id="main_again" />
+			<img class="main_restart" id="main_restart" />
+			<img class="main_next" id="main_next" />
+			<div class="help-menu">
+				<img class="main_help_detail" id="main_help_detail"  />
+				<div class="back">
+					返回
+				</div>
+			</div>
+	    </div>
+	    </div><!-- load end -->
+		<div class="frame" style="display:none">
+			<div class="wrapper">
+				<div class="backpack">
+					<div class="backpack-btn">
+						<img id="backpackBtn" >
+					</div>
+					<div class="backpack-view">
+						<img src="">
+					</div>
+					<img class="backpack-drag">
+					<div class="backpack-bar close">
+						<div class="backpack-description">
+							你刚从床上醒来.......
+						</div>
+						<!-- backpack-description -->
+						<div class="backpack-wrapper">
+							<div class="backpack-row">
+								<div class="backpack-item">
+								</div>
+								<div class="backpack-item">
+								</div>
+								<div class="backpack-item">
+								</div>
+								<div class="backpack-item">
+								</div>
+								<div class="backpack-item">
+								</div>
+								<div class="backpack-item">
+								</div>
+								<div class="backpack-item">
+								</div>
+							</div>
+							<div class="backpack-row">
+								<div class="backpack-item">
+								</div>
+								<div class="backpack-item">
+								</div>
+								<div class="backpack-item">
+								</div>
+								<div class="backpack-item">
+								</div>
+								<div class="backpack-item">
+								</div>
+								<div class="backpack-item">
+								</div>
+								<div class="backpack-item">
+								</div>
+							</div>
+						</div>
+						<!-- backpack-wrapper -->
+						<div class="backpack-mix">
+							<div class="backpack-row">
+								<div class="backpack-item">
+								</div>
+								<div class="backpack-plus"></div>
+								<div class="backpack-item">
+								</div>
+							</div>
+							<div class="backpack-row">
+								<div class="backpack-mixbtn" state="normal">合成栏</div>
+							</div>
+						</div>
+						<!-- backpack-mix -->
+					</div>
+					<!-- backpack-bar -->
+				</div>
+				<!-- backpack -->
+				<div class="room">
+					<div class="room-0">
+						<div class="view-0">
+							<img class="room-item-view00" name="view00" id="view00" >
+							<img class="room-item-note tool" name="note" id="note" >
+							<img class="room-item-drawer container" name="drawer" id="drawer" >
+							<img class="room-item-key2 tool" name="key2" id="key2" >
+							<img class="room-item-door-1 container" name="door1" id="door1" >
+						</div>
+						<div class="view-1">
+							<div class="safebox">
+								<img class="room-item-BigsafeBox" name="safe" id="bigsafe" >
+								<div class="safe_btn_1 safe_btn"></div>
+								<div class="safe_btn_2 safe_btn"></div>
+								<div class="safe_btn_3 safe_btn"></div>
+								<div class="safe_btn_4 safe_btn"></div>
+								<div class="safe_btn_5 safe_btn"></div>
+								<div class="safe_btn_6 safe_btn"></div>
+								<div class="safe_btn_7 safe_btn"></div>
+								<div class="safe_btn_8 safe_btn"></div>
+								<div class="safe_btn_9 safe_btn"></div>
+								<p id="safe_screen"></p>
+							</div>
+							<img class="room-item-view01" name="view01" id="view01" >
+							<img class="room-item-note_1 tool" name="note" id="note_1" >
+							<img class="room-item-drawer_1 container" name="drawer" id="drawer_1" >
+							<img class="room-item-key2_1 tool" name="key2" id="key2_1">
+							<img class="room-item-door1-1 container" name="door1" id="door1_1" >
+							<img class="room-item-dragline container"  id="dragline" >
+							<img class="room-item-lighter container"   id="lighter" >
+							<img class="room-item-Magnifier tool" name="magnifier" id="Magnifier" >
+							<img class="room-item-safebox container" name="safe" id="safe" >
+							<img class="room-item-safeboxOpen container" name="safe" id="safe_open" >
+						    <img class="room-item-gun tool" name="gun" id="gun" >
+						    <img class="room-item-hammer tool" name="hammer" id="hammer" >
+							<img class="room-item-door2-1 container" name="door2" id="door2" >
+						</div>
+						<div class="view-2">
+							 <img class="room-item-view02" name="view02" id="view02" >
+							 <img class="room-item-door2-2 container" name="door2" id="door2_2" >
+							 <img class="room-item-door3 container"  id="door3" >
+							 <img id="chair">
+							 <div name="TVbtn" id="TVbtn"></div>
+						</div>
+						<div class="view-3">
+						     <img class="room-item-view03" name="view03" id="view03" >
+						     <img class="room-item-door3 container"  id="door3_3" >
+						</div>
+						<div class="ceiling">
+						</div>
+						<div class="floor">
+						</div>
+
+
+					</div>
+					<!-- room-0 -->
+					<div class="room-1">
+						<div class="view-0">
+							<img  class="room-item-view10" id="view10">
+							<img class="room-item-clotheshorse tool" name="clothshorse" id="clothshorse">
+							<img class="room-item-wrench tool" name="wrench" id="wrench">
+							<img class="room-item-occlusion" id="occlusion">
+							<img class="room-item-box container" name="box" id="box">
+							<img class="room-item-key1 tool" name="key1" id="key1">
+							<img  class="view-back" id="viewback"><!-- 返回按钮 -->
+						</div>
+
+
+					</div>
+					<!-- room-1 -->
+					<div class="room-2" id="room-2">
+					    <audio id="sound1" src="#" autoplay=ture ></audio>
+					    <audio id="sound2" src="#" autoplay=ture ></audio>
+						<canvas id="canvas1" width="800" height="600"></canvas>
+						<canvas id="canvas2" width="800" height="600"></canvas>
+						<canvas id="canvas3" width="800" height="600"></canvas>
+						<canvas id="canvas4" width="800" height="600"></canvas>
+					</div>
+					<!-- room-2 -->
+					<div class="room-3">
+						<div class="view-0">
+							<img class="room-item-view30" name="view30" id="view30" >
+							<img class="room-item-scissior tool" name="scissior" id="scissior" >
+							<img class="room-item-key31 tool" name="key31" id="key31" >
+							<img class="room-item-door301 container" name="door301" id="door301" >
+							<img class="room-item-lock301 container" name="lock301" id="lock301" >
+							<img class="room-item-lock302 container" name="lock302" id="lock302" >
+							<img class="room-item-lock303 container" name="lock303" id="lock303" >
+							<img class="room-item- tool" name="" id="" >
+							<img class="room-item- tool" name="" id="" >
+						</div>
+						<div class="view-1">
+							<img class="room-item-door311 container" name="door301" id="door311" >
+							<img class="room-item-lock311 container" name="lock311" id="lock311" >
+							<img class="room-item-lock312 container" name="lock312" id="lock312" >
+							<img class="room-item-lock313 container" name="lock313" id="lock313" >
+							<img class="room-item-cabinet31" name="cabinet31" id="cabinet31" >
+							<img class="room-item-cabinet31_open" name="cabinet31_open" id="cabinet31_open" >
+							<img class="room-item-break31 container" name="break31" id="break31" >
+							<img class="room-item-poster tool" name="poster" id="poster" >
+							<img class="room-item-view31" name="view31" id="view31" >
+						</div>
+						<div class="view-2">
+							<img class="room-item-view32" name="view32" id="view32" >
+							<div class="safebox safebox31">
+							  <img class="room-item-BigsafeBox" name="safe31" id="bigsafe31" >
+							  <div class="safe_btn_1 safe_btn"></div>
+							  <div class="safe_btn_2 safe_btn"></div>
+							  <div class="safe_btn_3 safe_btn"></div>
+							  <div class="safe_btn_4 safe_btn"></div>
+							  <div class="safe_btn_5 safe_btn"></div>
+							  <div class="safe_btn_6 safe_btn"></div>
+							  <div class="safe_btn_7 safe_btn"></div>
+							  <div class="safe_btn_8 safe_btn"></div>
+							  <div class="safe_btn_9 safe_btn"></div>
+							  <p id="safe_screen"></p>
+							  <p id="safe_encryption"></p>
+						    </div>
+							<img class="room-item-safebox31 container" name="safe31" id="safe31" >
+							<img class="room-item-safebox31_open safebox_open container" name="safe31_open" id="safe31_open" >
+							<img class="room-item-key32 tool" name="key32" id="key32" >
+							<img class="room-item-hammer31 tool" name="hammer31" id="hammer31" >
+						</div>
+						<div class="view-3">
+							<img class="room-item-view33" name="view33" id="view33" >
+							<img class="room-item-lamptop31_open container" name="lamptop31_open" id="lamptop31_open" >
+							<img class="room-item-dragline31 container" name="dragline31" id="dragline31" >
+							<img class="room-item-lampshade31 container" id="lampshade31" >
+							<img class="room-item-wall_break31 container" name="wall_break31" id="wall_break31" >
+							<img class="room-item-key33 tool" name="key33" id="key33" >
+						</div>
+					</div><!-- room3 end -->
+					<div class="message" id="message" style="display:none">
+    	               <!-- <p>你有一把左轮手枪，每次只有7发子弹。子弹用完会更换子弹，更换时间为1s。你的生命值为5点，坚持1分钟即过关。</p> -->
+    	               <span class="btn-start" onclick="Game()">开  始</span>
+                    </div>
+					<img class="view-prev" id="viewprev" >
+					<img class="view-next" id="viewnext" >
+				</div>
+				<!-- room -->
+			</div>
+			<!-- wrapper -->
+		</div>
+		<!-- frame -->
+
+        <pre id="debug" style="z-index: 99999999999; position: fixed; word-wrap: break-word; width: 200px; left: 100px; top: 100px; background: #eee; color: #000; font-size: 16px;"></pre>
+
+        <script type="text/javascript" src="js/GameStart.js"></script>
+		<script type="text/javascript" src="js/res.js"></script>
+		<script type="text/javascript" src="js/backpack.js"></script>
+		<script type="text/javascript" src="js/room.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/commonFunctions.js"></script>
+		<script type="text/javascript" src="js/walkers.js"></script>
+		<script type="text/javascript" src="js/gun.js"></script>
+		<script type="text/javascript" src="js/health.js"></script>
+		<script type="text/javascript" src="js/data.js"></script>
+	</body>
+</html>
